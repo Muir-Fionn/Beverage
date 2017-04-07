@@ -4,8 +4,50 @@
   box-sizing: border-box;
 }
 
+body {
+  color: #000022;
+  background-color: #f7f6f3
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  background: #ddd;
+  color: #000022;
+  border: none;
+  margin: 5px auto;
+  padding: 1% 5%;
+  border-radius: 1em;
+}
+
+::-webkit-input-placeholder {
+  color: #001242;
+}
+
+input[type='submit'] {
+  width: auto;
+  padding: 2% 5%;
+  margin: 5% auto;
+  color: #000022;
+  border-radius: 1em;
+}
+
+.title {
+  flex-basis: 100%;
+  color: #0094C6;
+  text-align: center;
+}
+
 .nav {
   width: 100%;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #005E7C;
+  color: #F7F6F3;
+  position: fixed;
 }
 
 .nav ul {
@@ -30,24 +72,38 @@
 .name {
   flex-grow: 4;
   text-align: left;
+  font-size: 1.2em;
+  letter-spacing: 2px;
 }
 
 .nav li:hover {
-  background-color: #aaa;
+  text-decoration: underline;
 }
 
 .section {
   width: 100%;
+  min-height: 100vh;
   padding: 5%;
+  padding-top: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+.about img {
+  border-radius: 50%;
+  height: 15em;
+  width: auto;
+  object-fit: scale-down;
+  margin: 2% auto;
+  flex-basis: 100%;
+}
+
 .bio {
   padding: 0.25em 0;
   text-indent: 2em;
+  flex-basis: 100%;
 }
 
 .bio:first-of-type {
@@ -57,36 +113,154 @@
 .bio:first-of-type::first-letter {
   font-size: 5em;
   float: left;
-  margin: -0.1em 0.1em -0.3em 0;
+  margin: -0.3em 0.1em -0.3em 0;
+  color: #0094C6;
 }
 
-.events {
+.events, .resume {
   display: flex;
 }
 
-.event {
-  padding: 5%;
+.event, .workHistory, .education {
+  padding: 2% 5%;
   color: #1B2F33;
-}
-.event + .event {
-  border-top: 2px solid #0D1321;
 }
 
 .subtitle {
-  margin: 2% auto;
+  margin: 2% auto 1% auto;
   text-transform: capitalize;
 }
 
 .event .subtitle {
-  color: #6290C3;
+  color: #0094C6;
+  border-bottom: 2px solid #0094C6;
+}
+
+.resume .subtitle {
+  font-size: 1.4em;
 }
 
 .eventDescription {
-  margin: 2% 0;
+  margin-top: 2%;
 }
-.time, .location {
+
+.date, .location, .company, .employed {
   letter-spacing: 1px;
   font-size: 1.2em;
-  font-weight: bold;
-  color: #A8763E;
+  color: #001242;
+  display: inline-block;
+}
+
+.location + .date, .company + .location, .location + .employed  {
+  padding-left: 1.5em;
+  border-left: 2px solid #0094C6;
+}
+
+.location, .company {
+  padding-right: 1.5em;
+}
+
+.resumeTitle {
+  border-bottom: 2px solid;
+}
+
+.position {
+  padding-bottom: 2%;
+}
+
+.positionDescription {
+  padding-top: 1%;
+}
+
+.contact {
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.contactForm {
+  order: 1;
+  width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.social i {
+  margin: 5px 20px;
+  margin-left: 0;
+  width: 1em;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.social {
+  order: 2;
+  height: 70%;
+  width: 100%;
+  display: flex;
+  margin: 5% auto;
+  flex-wrap: wrap;
+}
+
+.social h3 {
+  flex-basis: 100%;
+  flex-grow: 4;
+  text-align: center;
+}
+
+.icon {
+  flex-basis: 25%;
+  flex-grow: 1;
+}
+
+.contact h3 {
+  margin: 10px 0;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+  .about {
+    display: block;
+  }
+
+  .about img {
+    float: left;
+    margin: 2%;
+    margin-left: 0;
+  }
+
+  .about .title {
+    margin: 2% 0;
+  }
+
+  .bio:first-of-type {
+    margin-top: 3em;
+  }
+
+  .contact {
+    padding: 2% 10%;
+    padding-bottom: 0;
+    flex-direction: row;
+  }
+
+  .social {
+    margin: 0;
+    width: 30%;
+    align-items: flex-start;
+    order: 1;
+    flex-direction: column;
+  }
+
+  .icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .contactForm {
+    order: 2;
+  }
 }

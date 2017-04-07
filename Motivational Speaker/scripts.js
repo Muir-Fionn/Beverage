@@ -1,6 +1,7 @@
 /*--- Variables ---*/
 /* DOM Variables */
 var upcoming = document.querySelector('.events');
+var resume = document.querySelector('.resume');
 
 /* Div Variable Arrays and Objects */
 var events = [
@@ -24,11 +25,44 @@ var events = [
   }
 ];
 
+var positions = [
+  {
+    title: 'Design Engineer and Stress Analyst Intern',
+    company: 'Boeing',
+    employed: 'Jun 2016 – Present',
+    location: 'Huntsville, Alabama',
+    description: 'Support design and analysis efforts for the Space Launch System, which is the largest rocket in history with missions to Mars and other beyond Earth orbit destinations'
+  },
+  {
+    title: 'Systems Engineering Intern',
+    company: 'Boeing',
+    employed: 'Jun 2015 – Jun 2016',
+    location: 'Huntsville, Alabama',
+    description: 'Support engineering team in developing and analyzing aerospace systems.'
+  }
+];
+
+var education = [
+  {
+    name: 'Massachusetts Institute of Technology',
+    degree: 'Bachelor of Science (BS) Field Of Study Aerospace, Aeronautical and Astronautical Engineering',
+    years: '2013 – 2017',
+    activities: "National Society of Black Engineers, Black Students' Union, Black Women's Alliance, MIT American Institute of Aeronautics and Astronautics, Society of Women Engineers, African Dance Team, MIT Intervarsity"
+  },
+  {
+    name: 'Wheeler High School',
+    degree: 'High School',
+    years: '2009 - 2013',
+    activities: "National Honor Society, National Beta Club, Science Honor Society, Math Honor Society, Social Studies Honor Society, Delta Sigma Theta Debutante Program, Dance Ministry, Wind Ensemble, Concert Band, Symphonic Band, Tennis, English Honor Society"
+  }
+]
+
 /*--- Functions ---*/
 /*Functions to Execute on Page Load */
 document.onreadystatechange = () => {
  if (document.readyState === 'complete') {
    upcomingFill();
+   resumeFill();
  }
 };
 
@@ -42,7 +76,7 @@ function upcomingFill() {
     var container = makeElement('div', 'event', null);
     var title = makeElement('h2', 'subtitle', el.title);
     var date = makeElement('span', 'date', el.date);
-    var location = makeElement('span', 'location', el.time);
+    var location = makeElement('span', 'location', el.location);
     var description = makeElement('p', 'eventDescription', el.description);
 
     appendChildren(container, title, location, date, description);
@@ -50,6 +84,58 @@ function upcomingFill() {
     upcoming.appendChild(container);
   });
 }
+
+//Fill CSV section
+function resumeFill() {
+  var header = makeElement('h1', 'title', 'CSV');
+  resume.appendChild(header);
+
+  educationFill();
+  historyFill();
+}
+
+function historyFill() {
+  var div = makeElement('div', 'workHistory', null)
+  var header = makeElement('h2', 'resumeTitle', 'Work History');
+  div.appendChild(header);
+
+  positions.forEach(function(el) {
+    var container = makeElement('div', 'position', null);
+    var title = makeElement('h3', 'subtitle', el.title);
+    var company = makeElement('span', 'company', el.company);
+    var employed = makeElement('span', 'employed', el.employed);
+    var location = makeElement('span', 'location', el.location);
+    var description = makeElement('p', 'positionDescription', el.description);
+
+    appendChildren(container, title, company, location, employed, description);
+
+    div.appendChild(container);
+  });
+
+  resume.appendChild(div);
+}
+
+//Fill education
+function educationFill() {
+  var div = makeElement('div', 'education', null)
+  var header = makeElement('h2', 'resumeTitle', 'Education');
+  div.appendChild(header);
+
+  education.forEach(function(el) {
+    var container = makeElement('div', 'school', null);
+    var name = makeElement('h2', 'subtitle', el.name);
+    var degree = makeElement('p', 'degree', el.degree);
+    var years = makeElement('p', 'years', el.years);
+    var activities = makeElement('p', 'activities', el.activities);
+
+    appendChildren(container, name, degree, years, activities);
+
+    div.appendChild(container);
+  });
+
+  resume.appendChild(div);
+}
+
 
 /*
   @param type: type of html element to build
