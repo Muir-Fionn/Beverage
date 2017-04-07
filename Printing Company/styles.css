@@ -1,0 +1,286 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #422040;
+  background-color: #F7F6F2;
+  font-family: 'Roboto', sans-serif;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  background: #F7F6F2;
+  border: none;
+  margin: 5px auto;
+  padding: 1% 2%;
+}
+
+input[type='submit'] {
+  width: auto;
+  padding: 2% 5%;
+  margin: 5% auto;
+  color: #422040;
+  border-radius: 1em;
+}
+
+.nav {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2%;
+  min-height: 15vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav ul {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav li {
+  display: inline-block;
+  text-align: center;
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.nav li:hover {
+  text-decoration: underline;
+}
+
+.nav li + li {
+  border-left: 2px solid;
+}
+
+.logo {
+  color: #B54F1C;
+  text-align: center;
+  flex-basis: 100%;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  font-size: 2em;
+  font-family: 'Damion', cursive;
+  color: #B54F1C;
+}
+
+.header {
+  width: 90%;
+  height: auto;
+  min-height: 20vh;
+  margin: 0 auto;
+  padding: 2% 10%;
+  display: none;
+  align-items: center;
+  background-image: url('https://images.pexels.com/photos/342943/pexels-photo-342943.jpeg?w=640&auto=compress&cs=tinysrgb');
+  background-size: cover;
+  background-position: center;
+  color: #594F4A;
+}
+
+.promotion {
+  background-color: rgba(246, 252, 250, 0.9);
+  width: 40%;
+  padding: 2%;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.title {
+  color: #B54F1C;
+}
+
+.btn-info {
+  width: auto;
+  padding: 2% 5%;
+  background-color: #B54F1C;
+  color: white;
+  border-radius: 1em;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+
+.summary {
+  margin: 5% 0;
+}
+
+.subtitle {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 2em;
+  margin: 5% 0;
+  margin-bottom: 2%;
+  background-image: linear-gradient(to top, transparent, transparent 48%, #422040 49%, #422040 51%, transparent 51%);
+}
+
+.subtitle span {
+  background-color: #F7F6F2;
+  padding: 0 5%;
+}
+
+.reviews, .examples {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.reviews {
+  padding-bottom: 5%;
+}
+
+.review {
+  width: 80%;
+  padding: 2% 5%;
+  font-size: 0.8em;
+}
+
+.name {
+  margin-top: 5%;
+}
+
+.stars i {
+  color: #DBA906;
+  padding: 0;
+  margin: 0;
+}
+
+.product {
+  position: relative;
+  display: inline-block;
+  width: 90%;
+  height: 70vh;
+  margin: 2%;
+  background-size: cover;
+}
+
+.product1 {
+  background-image: url('https://images.pexels.com/photos/253360/pexels-photo-253360.jpeg?w=640&auto=compress&cs=tinysrgb');
+}
+
+.product2 {
+  background-image: url('https://images.pexels.com/photos/79272/warby-parker-glasses-wood-79272.jpeg?w=640&auto=compress&cs=tinysrgb');
+}
+
+.product3 {
+  background-image: url('https://images.pexels.com/photos/30027/pexels-photo-30027.jpg?w=640&auto=compress&cs=tinysrgb');
+}
+
+.product4 {
+  background-image: url('https://images.pexels.com/photos/263877/pexels-photo-263877.jpeg?h=400&auto=compress&cs=tinysrgb');
+  background-position: center;
+}
+
+.productName {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  min-height: 2em;
+  line-height: 2em;
+  font-size: 1.2em;
+  font-weight: bold;
+  bottom: 0;
+  text-align: center;
+  background-color: rgba(246, 252, 250, 0.8);
+  text-decoration: none;
+  color: #2F14A8;
+}
+
+.productName:hover {
+  text-decoration: underline;
+}
+
+.contactForm {
+  width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact {
+  background: #422040;
+  padding: 2%;
+  padding-bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #F7F6F2;
+}
+
+.social i {
+  margin: 5px 20px;
+  margin-left: 0;
+  width: 1em;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.social {
+  height: 70%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact h3 {
+  margin: 10px 0;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    display: flex;
+  }
+
+  .logo {
+    flex-grow: 1;
+    flex-basis: auto;
+    font-size: 3em;
+  }
+
+  .reviews, .examples, .nav {
+    width: 80%;
+    margin: auto;
+  }
+
+  .nav {
+    margin-bottom: 2%;
+  }
+
+  .review {
+    width: 40%;
+    margin: 2%, 5%;
+  }
+
+  .product {
+    width: 29%;
+    height: 0;
+    padding-bottom: 20%;
+  }
+
+  .productName {
+    line-height: 2em;
+  }
+
+  .contact {
+    padding: 2% 10%;
+    padding-bottom: 0;
+    justify-content: flex-end;
+  }
+}
