@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Cormorant', serif;
 }
 
 body {
@@ -40,9 +41,9 @@ input[type='submit'] {
 }
 
 .nav {
+  display: none;
   width: 100%;
   height: 5vh;
-  display: flex;
   flex-wrap: wrap;
   align-items: center;
   background-color: #005E7C;
@@ -69,11 +70,12 @@ input[type='submit'] {
   cursor: pointer;
 }
 
-.name {
+.nav .name {
   flex-grow: 4;
   text-align: left;
   font-size: 1.2em;
   letter-spacing: 2px;
+  font-family: 'Cinzel', serif;
 }
 
 .nav li:hover {
@@ -85,10 +87,37 @@ input[type='submit'] {
   min-height: 100vh;
   padding: 5%;
   padding-top: 10vh;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.home {
+  position: relative;
+  background-color: rgba(50,50,100, 0.2);
+}
+
+.home .photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  padding-bottom: 67%;
+  background-image: url(http://media.nbcbayarea.com/images/1200*675/BOST_000000004125362.JPG?ak=bc);
+  background-size: cover;
+}
+
+.home .name {
+  position: absolute;
+  text-align: center;
+  right: 20%;
+  color: white;
+}
+
+.home .name * {
+  font-family: 'Cinzel', serif;
 }
 
 .about img {
@@ -115,10 +144,6 @@ input[type='submit'] {
   float: left;
   margin: -0.3em 0.1em -0.3em 0;
   color: #0094C6;
-}
-
-.events, .resume {
-  display: flex;
 }
 
 .event, .workHistory, .education {
@@ -221,8 +246,25 @@ input[type='submit'] {
   text-transform: uppercase;
 }
 
+.display {
+  display: flex;
+}
+
+.homeNav {
+  position: absolute;
+  bottom: -40px;
+  background-color: #234;
+  margin: 0;
+  padding: 0;
+}
+
 @media only screen and (min-width: 768px) {
-  .about {
+  .home .photo {
+    height: 100vh;
+    padding-bottom: 0;
+  }
+
+  .display .about {
     display: block;
   }
 
@@ -262,5 +304,17 @@ input[type='submit'] {
 
   .contactForm {
     order: 2;
+  }
+
+  .homeNav {
+    bottom: 20%;
+    padding: 2% 0;
+    background-color: rgba(50,50,100, 0.5);
+    font-size: 1.2em;
+  }
+
+  .homeNav li:hover {
+    height: 100%;
+    background-color: rgba(50,50,100, 0.9);
   }
 }

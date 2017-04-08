@@ -66,6 +66,8 @@ document.onreadystatechange = () => {
  }
 };
 
+/* Click Event Functions */
+
 /* DOM Build Functions */
 // Fill Upcoming Events Section
 function upcomingFill() {
