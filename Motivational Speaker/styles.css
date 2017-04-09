@@ -40,11 +40,30 @@ input[type='submit'] {
   text-align: center;
 }
 
+.nav > ul > li {
+  display: none;
+  padding: 1% 2%;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.nav > ul > li:first-of-type {
+  display: block;
+  text-align: center;
+}
+
+.nav:hover li {
+  display: block;
+  height: auto;
+}
+
+
 .nav {
   display: none;
   width: 100%;
-  height: 5vh;
+  min-height: 50px;
   flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
   background-color: #005E7C;
   color: #F7F6F3;
@@ -55,19 +74,12 @@ input[type='submit'] {
   width: 100%;
   list-style-type: none;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
   text-align: center;
   padding: 0 5%;
-}
-
-.nav li {
-  width: auto;
-  display: inline-block;
-  padding: 1% 2%;
-  white-space: nowrap;
-  cursor: pointer;
 }
 
 .nav .name {
@@ -96,6 +108,7 @@ input[type='submit'] {
 .home {
   position: relative;
   background-color: rgba(50,50,100, 0.2);
+  height: 50%;
 }
 
 .home .photo {
@@ -112,7 +125,8 @@ input[type='submit'] {
 .home .name {
   position: absolute;
   text-align: center;
-  right: 20%;
+  width: auto;;
+  top: 30vw;
   color: white;
 }
 
@@ -251,17 +265,42 @@ input[type='submit'] {
 }
 
 .homeNav {
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  bottom: -40px;
+  top: 65vw;
   background-color: #234;
   margin: 0;
   padding: 0;
 }
 
+.homeNav>ul>li {
+  display: block;
+}
+
 @media only screen and (min-width: 768px) {
+  .nav, .nav ul {
+    flex-direction: row;
+    height: 50px;
+  }
+
+  .nav > ul > li {
+    width: auto;
+    display: inline-block;
+  }
+
+  .home {
+    height: 100vh;
+  }
+
   .home .photo {
     height: 100vh;
     padding-bottom: 0;
+  }
+
+  .home .name {
+    right: 100px;
+    top: auto;
   }
 
   .display .about {
@@ -307,7 +346,7 @@ input[type='submit'] {
   }
 
   .homeNav {
-    bottom: 20%;
+    top: 80%;
     padding: 2% 0;
     background-color: rgba(50,50,100, 0.5);
     font-size: 1.2em;

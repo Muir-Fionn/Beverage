@@ -1,10 +1,25 @@
 /*--- Variables ---*/
 /* DOM Variables */
-var upcoming = document.querySelector('.events');
-var resume = document.querySelector('.resume');
+var dom = {
+  home: document.querySelector('.home'),
+  about: document.querySelector('.about'),
+  events: document.querySelector('.events'),
+  resume: document.querySelector('.resume'),
+  contact: document.querySelector('.contact'),
+  nav: document.querySelector('.nav'),
+  active: document.querySelector('.display')
+};
+
+var nav = {
+  home: document.querySelectorAll('[name="home"]'),
+  about: document.querySelectorAll('[name="about"]'),
+  events: document.querySelectorAll('[name="events"]'),
+  resume: document.querySelectorAll('[name="resume"]'),
+  contact: document.querySelectorAll('[name="contact"]')
+}
 
 /* Div Variable Arrays and Objects */
-var events = [
+var upcoming = [
   {
     title: "Women In Tech",
     location: 'Boston, MA',
@@ -61,20 +76,43 @@ var education = [
 /*Functions to Execute on Page Load */
 document.onreadystatechange = () => {
  if (document.readyState === 'complete') {
-   upcomingFill();
+   eventsFill();
    resumeFill();
+   addNavClickEvents();
  }
 };
 
 /* Click Event Functions */
+function addNavClickEvents() {
+  for(key in nav) {
+    var el = nav[key];
+    for(i=0; i < el.length; i++) {
+      el[i].addEventListener('click', function(){
+        var section = this.getAttribute('name');
+
+        if(section === 'home') {
+          dom.nav.style.display = 'none';
+        }else{
+          dom.nav.style.display = 'flex';
+        }
+
+        console.log(dom[section]);
+
+        dom.active.classList.remove('display');
+        dom[section].classList.add('display');
+        dom.active = dom[section];
+      });
+    }
+  }
+}
 
 /* DOM Build Functions */
-// Fill Upcoming Events Section
-function upcomingFill() {
+// Fill events Events Section
+function eventsFill() {
   var header = makeElement('h1', 'title', 'Upcoming Events');
-  upcoming.appendChild(header);
+  dom.events.appendChild(header);
 
-  events.forEach(function(el) {
+  upcoming.forEach(function(el) {
     var container = makeElement('div', 'event', null);
     var title = makeElement('h2', 'subtitle', el.title);
     var date = makeElement('span', 'date', el.date);
@@ -83,14 +121,14 @@ function upcomingFill() {
 
     appendChildren(container, title, location, date, description);
 
-    upcoming.appendChild(container);
+    dom.events.appendChild(container);
   });
 }
 
 //Fill CSV section
 function resumeFill() {
   var header = makeElement('h1', 'title', 'CSV');
-  resume.appendChild(header);
+  dom.resume.appendChild(header);
 
   educationFill();
   historyFill();
@@ -114,7 +152,7 @@ function historyFill() {
     div.appendChild(container);
   });
 
-  resume.appendChild(div);
+  dom.resume.appendChild(div);
 }
 
 //Fill education
@@ -135,7 +173,7 @@ function educationFill() {
     div.appendChild(container);
   });
 
-  resume.appendChild(div);
+  dom.resume.appendChild(div);
 }
 
 
