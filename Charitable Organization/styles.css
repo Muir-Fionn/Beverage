@@ -1,0 +1,295 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FBFBFB;
+  font-family: 'Oswald', sans-serif;
+}
+
+.head {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: rgba(102,105,105,0.5);
+  color: #E8EDDF;
+}
+
+.head:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url(https://images.pexels.com/photos/209728/pexels-photo-209728.jpeg?w=640&auto=compress&cs=tinysrgb);
+  background-size: cover;
+  background-position: center;
+}
+
+.call {
+  flex-grow: 12;
+  padding-top: 10vh;
+}
+
+.call, .moreInfo {
+  width: 100%;
+}
+
+.moreInfo {
+  cursor: pointer;
+}
+
+.moreInfo i {
+  display: block;
+  height: 70px;
+  width: 100%;
+  text-align: center;
+  line-height: 70px;
+}
+
+.nav {
+  width: 100%;
+  list-style-type: none;
+  padding: 0 10px;
+}
+
+.nav li {
+  display: inline-block;
+  float: right;
+  padding: 0 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.nav li:hover {
+  text-decoration: underline;
+}
+
+.nav .name {
+  float: left;
+  cursor: default;
+  font-family: 'Bree Serif', serif;
+}
+
+.nav .name:hover {
+  text-decoration: none;
+}
+
+.nav .donate {
+  color: #B3EFB2;
+}
+
+.slides {
+  width: 80%;
+  margin: 100px auto;
+}
+
+.slide, .selector, .blurb, .icon {
+  width: 100%;
+}
+
+.slide {
+  display: none;
+  margin: 20px;
+}
+
+.icon {
+  text-align: center;
+}
+
+.icon i {
+  font-size: 100px;
+  width: 170px;
+  height: 170px;
+  line-height: 120px;
+  border-radius: 50%;
+  border: 25px solid #0099F7;
+}
+
+.title {
+  color: #0099F7;
+  font-weight: bold;
+  font-size: 2.4em;
+  text-transform: uppercase;
+}
+
+.selector {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.slider {
+  position: relative;
+  flex-basis: 100%;
+  background: grey;
+  border-radius: 1em;
+  height: 10px;
+  margin: 30px auto;
+  background-image: linear-gradient(to right, #F11712, #834d9b, #0099F7 6.2%, transparent 6.2%);
+}
+
+.slider:after {
+  content: '';
+  top: -5px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #0099F7;
+}
+
+.slider[data-select='info']:after {
+  left: 6%;
+}
+
+.slider[data-select='voice']:after {
+  left: 50%;
+}
+
+.slider[data-select='action']:after {
+  left: 93%;
+}
+
+.btns {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.blocks {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  color: #FBFBFB;
+}
+
+.block {
+  flex-basis: 33%;
+  flex-grow: 1;
+  height: 400px;
+  background: red;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  padding-top: 50px;
+  flex-wrap: wrap;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.header, .description, .type, .typeIcon {
+  text-align: center;
+  text-shadow: 1px 1px 5px #222,
+  -1px -1px 5px #222;
+}
+
+.type {
+  font-size: 1.3em;
+  line-height: 1.4em;
+  padding: 0 10px;
+}
+
+.typeIcon {
+  font-size: 1.4em;
+}
+
+.header {
+  flex-grow: 3;
+  display: flex;
+  align-items: center;
+  flex-basis: 100%;
+  justify-content: center;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  flex-wrap: wrap;
+  color: #FBFBFB;
+}
+
+.email {
+  flex-grow: 2;
+  display: flex;
+  justify-content: center;
+  background-color: grey;
+  padding: 15px 0;
+}
+
+.email i {
+  margin: auto 10px;
+}
+
+.email input {
+  padding: 0 5px;
+  background-color: #FBFBFB;
+}
+
+.email input[type='submit'] {
+  padding: 5px 10px;
+  background-color: #0099F7;
+  text-transform: uppercase;
+  border: none;
+  color: #FBFBFB;
+}
+
+.facebook, .twitter, .google, .rss {
+  flex-grow: 1;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.twitter {
+  background-color: #1dcaff;
+}
+
+.google {
+  background-color: #d34836;
+}
+
+.rss {
+  background-color: #FF6600;
+}
+
+.active {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav {
+    padding: 0 100px;
+  }
+
+  .blurb, .icon {
+    width: 50%;
+  }
+}
