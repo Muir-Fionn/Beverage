@@ -3,28 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title>Cruise Ship</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div class="nav">
       <!-- Main Nav -->
-      <ul class='mainNav'>
-        <li class='brand'>Cruise Brand</li>
-        <li>Email Sign-Up</li>
-        <li>Deals</li>
-        <li>Sign In/Register</li>
-        <li>Saved</li>
-        <li>Search</li>
-      </ul>
+      <div class="mainNav">
+        <ul>
+          <li class='brand'>Cruise Brand</li>
+          <li><i class="fa fa-search"></i>Search</li>
+          <li><i class="fa fa-heart-o"></i>Saved</li>
+          <li><i class="fa fa-user"></i>Sign In/Register</li>
+          <li><i class="fa fa-tag"></i>Deals</li>
+          <li><i class="fa fa-envelope"></i>Email Sign-Up</li>
+        </ul>
+      </div>
       <!-- Secondary Nav -->
-      <ul class='secondaryNav'>
-        <li>Plan a Cruise</li>
-        <li>Our Ships</li>
-        <li>Destinations</li>
-        <li>Check a Booking</li>
-        <li>Contact Us</li>
-        <li class='phone'>1-800-Number</li>
-      </ul>
+      <div class="secondaryNav">
+        <ul>
+          <li>Plan a Cruise</li>
+          <li>Our Ships</li>
+          <li>Destinations</li>
+          <li>Check a Booking</li>
+          <li>Contact Us</li>
+          <li class='phone'>1-800-Number</li>
+        </ul>
+      </div>
     </div>
 
     <div class="slideshow">
@@ -33,7 +38,7 @@
       <div class="slide-plus"> > </div>
 
       <!-- Slide Construct: Pic, Text Div, Pic -->
-      <div class="slide">
+      <div class="slide active">
         <div class="photo"></div>
         <div class="text">
           <h2 class="title">Package Deal</h2>
@@ -44,6 +49,10 @@
           <div class="btn btn-red">View Deals</div>
           <h5 class="dateRange">July - November 2017</h5>
         </div>
+      </div>
+
+      <div class="slide">
+        <div class="photo"></div>
         <div class="text">
           <h2 class="title">Ship Deal</h2>
           <div class="description">
@@ -52,6 +61,10 @@
           <div class="btn btn-red">View Deals</div>
           <h5 class="dateRange">Sailing April - July 2018</h5>
         </div>
+      </div>
+
+      <div class="slide">
+        <div class="photo"></div>
         <div class="text">
           <h2 class="title">Upcoming Package</h2>
           <div class="description">
@@ -63,6 +76,10 @@
     </div>
 
     <div class="search">
+      <div class="header">
+        <h2>Find a cruise</h2>
+        <a href="#">Advanced Search</a>
+      </div>
       <!-- Simple form with dropdowns, links, btn (reference Princess) -->
       <form>
         <select name="date">
