@@ -5,13 +5,13 @@
 }
 
 body {
-  background-color: #FB3640;
+  background-color: #F7F9F9;
   color: #E2E2E2;
   font-family: 'Varela Round', sans-serif;
 }
 
 footer {
-  background-color: #247BA0;
+  background-color: #c31306;
   text-align: center;
   padding: 2%;
 }
@@ -23,8 +23,9 @@ a {
 
 .nav {
   width: 100%;
-  background-color: #0A2463;
-  height: 80px;
+  background-color: #eff320;
+  color: #c31306;
+  min-height: 80px;
   position: fixed;
   z-index: 5;
 }
@@ -38,7 +39,6 @@ a {
   display: flex;
   justify-content: space-around;
   text-align: center;
-  align-items: center;
 }
 
 .nav li {
@@ -48,7 +48,27 @@ a {
 }
 
 .nav li:hover {
-  background-color: #247BA0;
+  background-color: #F6F885;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown li {
+  width: 100%;
+  text-align: center;
+  display: none;
+  background-color: #eff320;
+}
+
+.dropdown .dropdownHead {
+  display: block;
+}
+
+.dropdown:hover  li {
+  display: block;
 }
 
 .brand {
@@ -58,8 +78,8 @@ a {
 
 .head {
   padding-top: 80px;
-  height: 100vh;
-  background-color: #247BA0;
+  min-height: 100vh;
+  background-color: #783089;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,6 +92,7 @@ a {
   padding-top: 10px;
   border-bottom: 3px solid;
   border-radius: 40%;
+  text-align: center;
 }
 
 .img{
@@ -99,30 +120,78 @@ a {
 }
 
 .blog {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid #0A2463;
+  justify-content: center;
+  border: 2px solid #B8336A;
   width: 100%;
   height: 400px;
   padding: 15px;
   margin: 20px;
+  background-size: fill;
+  background-position: top center;
+  text-shadow: 1px 1px 5px #111,
+  -1px -1px 5px #333;
+  overflow: hidden;
+}
+
+.blog:after, .blog img {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+
+.blog:after {
+  content: '';
+  background-color: #c31306;
+  z-index: -2;
+}
+
+.blog * {
+  margin: 10px auto;
+}
+
+.blog img {
+  object-fit: cover;
+  opacity: 0.6;
+  z-index: -1;
 }
 
 .btn {
-  position: relative;
-  top: 250px;
   width: 150px;
   height: 50px;
   line-height: 50px;
   text-align: center;
-  color: #0A2463;
   border: 2px solid;
   font-weight: bold;
   text-transform: uppercase;
+  box-shadow: 1px 1px 5px #333,
+  inset 1px 1px 5px #333;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
+  .dropdown {
+    flex-direction: row;
+  }
+
+  .dropdown:hover .dropdownHead {
+    display: none;
+  }
+
+  .dropdown li {
+    display: block;
+  }
+
+  .dropdown .dropdownHead {
+    display: none;
+  }
+
   .blog {
     width: 30%;
     flex-grow: 1;
