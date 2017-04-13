@@ -106,6 +106,7 @@ a {
   height: 100%;
   width: 100%;
   background-size: contain;
+  background-repeat: no-repeat;
   background-image: url(https://s3-us-west-2.amazonaws.com/filmdispenser/assets/images/my+wallet+hates+me/MWHM_46/MWHM46_starburstellybeans.jpg);
   background-position: left bottom;
   border-radius: 20%;
@@ -200,9 +201,9 @@ a {
   .img {
     display: inline-block;
     position: relative;
-    width: 95%;
+    width: 80%;
     max-width: 1000px;
     height: 0;
-    padding-bottom: 42%;
+    padding-bottom: 44%;
   }
 }
