@@ -1,0 +1,156 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #F9F9F9;
+  color: #003E1F;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #003E1F;
+  color: #FBFBFB;
+  text-align: center;
+  padding: 2%;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  padding: 5%;
+  color: #EDF4ED;
+  text-shadow: 1px 1px 5px #414341,
+    -1px -1px 5px #414341,
+    2px 2px 2px #575957;
+  letter-spacing: 1px;
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.header h2 {
+  font-size: 1em;
+}
+
+.header:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.pexels.com/photos/202103/pexels-photo-202103.jpeg?w=640&auto=compress&cs=tinysrgb" alt="table at farmers market');
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  opacity: 0.9;
+}
+
+.header:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #5F7367;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.drinks, .sideProject {
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.drink {
+  width: 80%;
+  display: inline-block;
+  display: flex;
+  margin: 2%;
+  padding: 10% 2%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px dashed #71BC95;
+}
+
+.drink img {
+  width: 80%;
+  border-radius: 2em;
+}
+
+.drinkName {
+  margin: 5% 0;
+}
+
+.btn {
+  width: auto;
+  background-color: white;
+  text-align: center;
+  margin: 3% 5%;
+  padding: 2% 10%;
+  border-radius: 1em;
+  cursor: pointer;
+  color: #F9F9F9;
+}
+
+.btnInfo {
+  padding: 2% 15%;
+  background-color: #007B8C;
+}
+
+.btnAdd {
+  background-color: #F46036;
+}
+
+.title {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 3em;
+  border-bottom: 5px solid #71BC95;
+  border-top: 5px solid #71BC95;
+  margin-bottom: 5%;
+  padding: 5% 0;
+}
+
+.subtitle {
+  font-size: 2em;
+  margin: 2% 0;
+}
+
+.description {
+  margin: 2%;
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    height: 50vh;
+  }
+
+  .drink {
+    width: 25%;
+    min-width: 200px;
+    padding: 2.5% 2%;
+  }
+
+  .drink img {
+    width: 90%;
+  }
+
+  .description {
+    width: 80%;
+  }
+}
